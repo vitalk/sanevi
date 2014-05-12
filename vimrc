@@ -53,6 +53,34 @@ endif
 " }}}
 
 " }}}
+" Visual cues {{{
+
+" Cursor line will always be in the middle of the window
+set scrolloff=1000
+
+set ruler                      " show the cursor position all the time
+set laststatus=2               " always show status line
+set visualbell                 " shut up
+set noerrorbells               " SHUT UP!
+
+" Display unprintable characters like tabs and trailing spaces. Use fallback
+" characters if terminal doesn't support unicode and unicode characters
+" otherwise.
+set list
+if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
+  set listchars=tab:¬·,trail:·,nbsp:×
+  set fillchars=diff:⋅,fold:⋅
+  set showbreak=…\ 
+else
+  set listchars=tab:\ \ ,trail:~,nbsp:+
+  set fillchars=diff:-,fold:-
+endif
+
+if version >= 703
+  set colorcolumn=+1           " mark the ideal max text width
+endif
+
+" }}}
 " Text formatting {{{
 
 set textwidth=78     " wrap at 78 chars by default
