@@ -53,6 +53,35 @@ endif
 " }}}
 
 " }}}
+" Text formatting {{{
+
+set textwidth=78     " wrap at 78 chars by default
+set shiftwidth=4     " number of spaces used for (auto)indent
+set softtabstop=4    " number of spaces to process during editing operations
+set tabstop=4        " number of spaces that a <Tab> in the file counts for
+set autoindent       " indents line relative to the line above it
+set smartindent      " do smart autoindenting when starting a new line in C-like
+                     " programs
+set smarttab         " use the 'shiftwidth' while inserting <Tab>
+set smartcase        " sometimes override ignorecase option
+set expandtab        " expand tabs to spaces
+
+" Format options: how automatic formatting is to be done {{{
+
+set formatoptions+=t " auto-wrap text using textwidth
+set formatoptions+=c " auto-wrap comments using textwidth
+set formatoptions+=r " auto insert current comment leader after <Enter> in Insert
+set formatoptions-=o " auto insert current comment leader after <o/O> in Normal
+set formatoptions+=q " allow formatting of comments with "gq"
+set formatoptions-=w " trail white space indicates paragraph continues next line
+set formatoptions-=a " auto reformat of paragraphs when inserted or deleted
+set formatoptions+=n " when formatting, recognize numbered lists
+set formatoptions+=m " also break at a multi-byte character above 255
+set formatoptions+=2 " when formatting, use second line's indent
+
+" }}}
+
+" }}}
 " Plugins {{{
 
 if filereadable(expand('~/.vim/vundles.vim'))
