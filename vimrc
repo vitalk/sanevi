@@ -124,6 +124,15 @@ if executable('ag')
 endif
 
 " }}}
+" System copy/paste {{{
+
+set clipboard=unnamed         " use clipboard register for all yank, delete and
+                              " change operations
+if has('unnamedplus')
+  set clipboard+=unnamedplus  " better support system clipboard
+endif
+
+" }}}
 " Plugins {{{
 
 if filereadable(expand('~/.vim/vundles.vim'))
