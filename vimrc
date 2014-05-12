@@ -110,6 +110,20 @@ set formatoptions+=2 " when formatting, use second line's indent
 " }}}
 
 " }}}
+" Search {{{
+
+set hlsearch         " highlight search matches
+set incsearch        " show search matches as you type
+set ignorecase       " search is case insensitive when search term is all
+                     " lowercase...
+set smartcase        " ...otherwise search uppercase
+
+" Use The Silver Searcher (https://github.com/ggreer/the_silver_searcher)
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" }}}
 " Plugins {{{
 
 if filereadable(expand('~/.vim/vundles.vim'))
