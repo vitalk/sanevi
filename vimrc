@@ -177,6 +177,13 @@ if filereadable(expand('~/.vim/vundles.vim'))
 endif
 
 " }}}
+" Key bindings {{{
+
+if filereadable(expand('~/.vim/keybindings.vim'))
+  source ~/.vim/keybindings.vim
+endif
+
+" }}}
 " Local config overwrite global one {{{
 
 if filereadable(expand('~/.vimrc.local'))
