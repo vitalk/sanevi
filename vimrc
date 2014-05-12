@@ -184,6 +184,15 @@ if filereadable(expand('~/.vim/keybindings.vim'))
 endif
 
 " }}}
+" Custom commands {{{
+
+if has('autocmd')
+  if filereadable(expand('~/.vim/autocmd.vim'))
+    source ~/.vim/autocmd.vim
+  endif
+endif
+
+" }}}
 " Local config overwrite global one {{{
 
 if filereadable(expand('~/.vimrc.local'))
