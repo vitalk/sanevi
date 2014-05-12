@@ -1,0 +1,17 @@
+                                // Vim Config //
+
+                            insane enough to be mine
+
+  ~ What is it?
+
+    Another Vim config.
+
+  ~ Installation
+
+    sh -c "`curl -fsSL https://raw.github.com/vitalk/sanevi/master/install.sh`"
+
+  ~ License
+
+    Copyright (c) by Vital Kudzelka. Use it for Good not Evil.
+
+    Distributed under the MIT license (http://mit-license.org/vitalk).
