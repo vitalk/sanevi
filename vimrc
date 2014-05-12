@@ -53,6 +53,36 @@ endif
 " }}}
 
 " }}}
+" UI {{{
+
+set lazyredraw                 " don't redraw while executing macros
+set nonumber                   " no line numbering
+set showcmd                    " display incomplete commands
+
+if &t_Co > 2 || has('gui_running')
+  syntax on                    " switch syntax highlighting on
+  syntax sync fromstart        " syntax synchronization from file start
+  set synmaxcol=600            " skip highlighting long lines
+endif
+
+if has('gui_running')
+  set go=mgR                   " leave menu bar and right scroll
+endif
+
+" Mouse support {{{
+
+if has('mouse')
+  " In many terminal emulators the mouse works just enable it
+  set mouse=a
+
+  if exists('$TMUX')
+    set ttymouse=xterm2        " allow buffer resizing in tmux
+  endif
+endif
+
+" }}}
+
+" }}}
 " Visual cues {{{
 
 " Cursor line will always be in the middle of the window
