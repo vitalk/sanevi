@@ -188,6 +188,13 @@ set wildignore+=*.DS_Store
 set wildignore+=*.png,*.jpg,*.gif
 
 " }}}
+" Folding {{{
+
+set foldmethod=indent          " fold based on indent
+set foldnestmax=3              " deepest fold is 3 levels
+set nofoldenable               " don't fold by default
+
+" }}}
 " Plugins {{{
 
 if filereadable(expand('~/.vim/vundles.vim'))
