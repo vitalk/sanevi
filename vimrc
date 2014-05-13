@@ -170,6 +170,24 @@ if has('unnamedplus')
 endif
 
 " }}}
+" Completion {{{
+
+set wildmenu                   " enable ctrl-n and ctrl-p to scroll thru matches
+set wildmode=full              " make cmdline tab completion similar to bash
+set wildchar=<tab>             " tab completion key
+
+" Stuff to ignore when tab completing
+set wildignore+=*~
+set wildignore+=.git,.hg,.svn
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.so
+set wildignore+=*.sw?
+set wildignore+=*.py[co]
+set wildignore+=*.DS_Store
+set wildignore+=*.png,*.jpg,*.gif
+
+" }}}
 " Plugins {{{
 
 if filereadable(expand('~/.vim/vundles.vim'))
