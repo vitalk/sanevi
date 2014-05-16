@@ -197,8 +197,8 @@ set nofoldenable               " don't fold by default
 " }}}
 " Plugins {{{
 
-if filereadable(expand('~/.vim/vundles.vim'))
-  source ~/.vim/vundles.vim
+if filereadable(expand('~/.vim/plugins.vim'))
+  source ~/.vim/plugins.vim
 endif
 
 " }}}
