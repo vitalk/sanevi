@@ -29,7 +29,7 @@ augroup END
 
 augroup ft_text
   au!
-  au FileType text setlocal textwidth=78 formatoptions=tcrqanm2
+  au FileType text setlocal textwidth=78 formatoptions=tcrqan2
 augroup END
 
 " }}}

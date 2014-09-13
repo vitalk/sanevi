@@ -134,7 +134,7 @@ set formatoptions+=q " allow formatting of comments with "gq"
 set formatoptions-=w " trail white space indicates paragraph continues next line
 set formatoptions-=a " auto reformat of paragraphs when inserted or deleted
 set formatoptions+=n " when formatting, recognize numbered lists
-set formatoptions+=m " also break at a multi-byte character above 255
+set formatoptions-=m " also break at a multi-byte character above 255
 set formatoptions+=2 " when formatting, use second line's indent
 
 " }}}
