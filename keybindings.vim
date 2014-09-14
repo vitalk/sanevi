@@ -52,16 +52,8 @@ nmap g# g#zz
 
 " }}}
 
-" Use "very magic" in searches (http://stackoverflow.com/questions/3760444)
-nnore / /\v
-vnore / /\v
-cnore %s/ %smagic/
-cnore >s/ >smagic/
-nnore :g/ :g/\v
-nnore :g// :g//
-
 " Start substitution
-nnore <leader>s :%smagic//<left>
+nnore <leader>s :%s//<left>
 
 " }}}
 " Buffers and windows {{{
