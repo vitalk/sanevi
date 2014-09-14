@@ -52,8 +52,14 @@ nmap g# g#zz
 
 " }}}
 
+" Search withing visual block
+xnore / <esc>/\%V
+
 " Start substitution
-nnore <leader>s :%s//<left>
+nnore <leader>s :%s/
+
+" Substitute within visual block
+xnore <leader>s <esc>:%s/\%V
 
 " }}}
 " Buffers and windows {{{
