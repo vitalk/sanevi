@@ -1,22 +1,10 @@
 " Essential {{{
 
-" Ensure the compatible mode is disabled
-if &compatible
-  set nocompatible
-endif
+call plug#begin('~/.vim/plugged')
 
-" Filetype off is required by Vundle
-filetype off
+" Plugins in use...
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" }}}
-" Plugins in use {{{
-
-" Let Vundle manage itself
-Plugin 'gmarik/vundle'
+call plug#end()
 
 " }}}
 
-filetype on

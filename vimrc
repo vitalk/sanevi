@@ -51,6 +51,13 @@ if exists('+undofile')
 endif
 
 " }}}
+" Plugins {{{
+
+if filereadable(expand('~/.vim/plugins.vim'))
+  source ~/.vim/plugins.vim
+endif
+
+" }}}
 
 " }}}
 " UI {{{
@@ -193,13 +200,6 @@ set wildignore+=*.png,*.jpg,*.gif
 set foldmethod=indent          " fold based on indent
 set foldnestmax=3              " deepest fold is 3 levels
 set nofoldenable               " don't fold by default
-
-" }}}
-" Plugins {{{
-
-if filereadable(expand('~/.vim/plugins.vim'))
-  source ~/.vim/plugins.vim
-endif
 
 " }}}
 " Key bindings {{{
