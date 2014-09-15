@@ -1,3 +1,9 @@
+" UI {{{
+
+" Force redraw (update) syntax highlighting for buffer.
+nnore U :syntax sync fromstart<cr>:redraw!<cr>
+
+" }}}
 " Quick navigation {{{
 
 " Go to start/end of the current line {{{
