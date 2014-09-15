@@ -6,6 +6,11 @@ if [[ -e ~/.vim || -e ~/.vimrc ]]; then
 fi
 
 git clone https://github.com/vitalk/sanevi ~/.vim
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+mkdir -p ~/.vim/autoload
+curl -fLo ~/.vim/autoload/plug.vim \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 ln -s ~/.vim/vimrc ~/.vimrc
-vim +BundleInstall +qall
+
+vim +PlugInstall +qall
