@@ -18,6 +18,11 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 
+Plug 'altercation/vim-colors-solarized'
+let g:solarized_termtrans = 1
+let g:solarized_contrast = "normal"
+let g:solarized_visibility = "normal"
+
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_extensions = ['funcy', 'filetype']

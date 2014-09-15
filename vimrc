@@ -62,6 +62,8 @@ endif
 " }}}
 " UI {{{
 
+colorscheme solarized
+set background=light
 set lazyredraw                 " don't redraw while executing macros
 set nonumber                   " no line numbering
 set showcmd                    " display incomplete commands
@@ -74,6 +76,8 @@ endif
 
 if has('gui_running')
   set go=mgR                   " leave menu bar and right scroll
+else
+  set t_Co=256
 endif
 
 " Mouse support {{{
