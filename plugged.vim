@@ -54,6 +54,17 @@ nnore <LocalLeader>p :Onoff paste<cr>
 nnore <LocalLeader>s :Onoff spell<cr>
 nnore <LocalLeader>i :Onoff list<cr>
 
+Plug 'lepture/vim-jinja'
+Plug 'groenewege/vim-less'
+Plug 'kchmck/vim-coffee-script'
+Plug 'vitalk/vim-javascript'
+Plug 'leshill/vim-json'
+Plug 'tpope/vim-jdaddy'
+Plug 'chase/vim-ansible-yaml'
+
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
+
 call plug#end()
 
 " }}}
