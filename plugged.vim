@@ -25,7 +25,7 @@ let g:solarized_visibility = "normal"
 
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_extensions = ['funcy', 'filetype']
+let g:ctrlp_extensions = ['funky', 'filetype']
 let g:ctrlp_cmd = 'CtrlP'                       " open ctrlp in file find mode
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'   " set the directory to store the cache files
 let g:ctrlp_clear_cache_on_exit = 0             " enable cross-session caching
