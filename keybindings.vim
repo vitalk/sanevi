@@ -1,3 +1,16 @@
+" Essential {{{
+
+" I suck at typing
+nnore   ; :
+cnore   ; :
+inore   ; :
+xnore   ; :
+nnore   : ;
+cnore   : ;
+inore   : ;
+xnore   : ;
+
+" }}}
 " UI {{{
 
 " Force redraw (update) syntax highlighting for buffer.
@@ -23,20 +36,17 @@ nnore   gk k
 
 " }}}
 
-" Expand to current file directory
-cnore %% <c-r>=expand('%:h').'/'<cr>
-
 " Open in new buffer
-nmap <localleader>ew :e %%
+nnore <localleader>ew :e <c-r>=expand('%:h').'/'<cr>
 
 " Open in split pane
-nmap <localleader>es :sp %%
+nnore <localleader>es :sp <c-r>=expand('%:h').'/'<cr>
 
 " Open in vertical split pane
-nmap <localleader>ev :vsp %%
+nnore <localleader>ev :vsp <c-r>=expand('%:h').'/'<cr>
 
 " Open in new tab
-nmap <localleader>et :tabe %%
+nnore <localleader>et :tabe <c-r>=expand('%:h').'/'<cr>
 
 " }}}
 " File edit {{{
