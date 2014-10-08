@@ -77,6 +77,9 @@ nnore <leader>s :%s/
 " Substitute within visual block
 xnore <leader>s <esc>:%s/\%V
 
+" Clear the last used search pattern
+nnore <esc><esc> :let @/ = ""<cr>
+
 " }}}
 " Buffers and windows {{{
 
