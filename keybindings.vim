@@ -2,11 +2,9 @@
 
 " I suck at typing
 nnore   ; :
-cnore   ; :
 inore   ; :
 xnore   ; :
 nnore   : ;
-cnore   : ;
 inore   : ;
 xnore   : ;
 
