@@ -162,6 +162,14 @@ set smartcase        " ...otherwise search uppercase
 " Use The Silver Searcher (https://github.com/ggreer/the_silver_searcher)
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
+
+  " Search for the provided text and open a quickfix list with matches.
+  com -nargs=+ -complete=file -bar Ag
+        \ silent! grep! <args>|copen|redraw!
+
+  " Add abbreviation, that works only when it's the first word on command
+  " line.
+  cabbr ag <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'Ag' : 'ag')<cr>
 endif
 
 " }}}
