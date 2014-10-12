@@ -12,6 +12,15 @@ nnore git :Git
 " Start interactive rebase in current branch
 nnore gri :Git rebase -i HEAD~
 
+Plug 'vitalk/gitv'
+" Opens gitv in separate tab
+nnore GL :Gitv<cr>
+" Disable default ctrl mappings, so buffer movement keys (<c-hjkl>)
+" work as expected.
+let g:Gitv_DoNotMapCtrlKey = 1
+au FileType gitv nmap <buffer> <silent> <c-n> <Plug>(gitv-jump-forward)
+au FileType gitv nmap <buffer> <silent> <c-p> <Plug>(gitv-jump-backward)
+
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-eunuch'
