@@ -41,6 +41,14 @@ augroup ft_make
 augroup END
 
 " }}}
+" Markdown {{{
+
+augroup ft_markdown
+  au!
+  au BufNewFile,BufRead *.md setlocal ft=markdown
+augroup END
+
+" }}}
 " Jinja {{{
 
 augroup ft_jinja
