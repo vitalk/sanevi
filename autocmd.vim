@@ -59,6 +59,36 @@ augroup ft_lesscss
 augroup END
 
 " }}}
+" Vim {{{
+
+augroup ft_vim
+  au!
+  au FileType vim setl ts=2 sts=2 sw=2 fdm=marker fmr={{{,}}}
+  au FileType vim nnore <buffer> <s-e> :Runtime\|PP<cr>
+  "au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+
+  fun! s:quithelp()
+    if &buftype == 'help'
+      quit
+    endif
+  endfun
+  au FileType help
+        \ nnore <buffer> q       :call <sid>quithelp()<cr> |
+        \ nnore <buffer> <left>  :left<cr> |
+        \ nnore <buffer> <right> :right<cr> |
+        \ nnore <buffer> <down>  :center<cr>
+augroup END
+
+" }}}
+" Quickfix {{{
+
+augroup ft_quickfix
+  au!
+  " Use q to quit any location/quickfix list
+  au FileType qf nnore <buffer> q :cclose<cr>
+augroup END
+
+" }}}
 " YAML {{{
 
 augroup ft_yaml
