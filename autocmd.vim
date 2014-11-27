@@ -41,6 +41,14 @@ augroup ft_make
 augroup END
 
 " }}}
+" Jinja {{{
+
+augroup ft_jinja
+  au!
+  au FileType jinja setlocal ts=2 sts=2 sw=2
+augroup END
+
+" }}}
 " CSS and LESS {{{
 
 augroup ft_lesscss
@@ -48,6 +56,30 @@ augroup ft_lesscss
   au BufNewFile,BufRead *.less setlocal filetype=less
   au FileType less,css setlocal foldmethod=marker foldmarker={,}
   au FileType less,css setlocal omnifunc=csscomplete#CompleteCSS
+augroup END
+
+" }}}
+" YAML {{{
+
+augroup ft_yaml
+  au!
+  au FileType yaml setlocal sw=2 sts=2 sw=2
+augroup END
+
+" }}}
+" JavaScript {{{
+
+augroup ft_javascript
+  au!
+  au FileType javascript setlocal sw=2 sts=2 sw=2
+augroup END
+
+" }}}
+" JSON {{{
+
+augroup ft_json
+  au!
+  au FileType json setlocal sw=2 sts=2 sw=2
 augroup END
 
 " }}}
