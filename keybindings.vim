@@ -52,6 +52,12 @@ nnore <localleader>et :tabe <c-r>=expand('%:h').'/'<cr>
 " Yank to end of the line
 nnore Y y$
 
+" Select the last inserted text
+nnore gV `[v`]
+
+" Select the contents of the current line, excluding indentation
+nnore vv  ^vg_
+
 " }}}
 " Search and replace {{{
 
