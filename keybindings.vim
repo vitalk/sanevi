@@ -121,4 +121,7 @@ nore <c-w><c-x> :tabclose<cr>
 " Exit Vim editor, discards any changes
 nnore <c-x><c-c> :qall!<cr>
 
+" Abbreviation to exit Vim and discard any changes
+cabbr qq <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'q!' : 'qq')<cr>
+
 " }}}
