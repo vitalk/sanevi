@@ -55,6 +55,13 @@ nnore <leader>e :CtrlPFiletype<cr>
 Plug 'vitalk/vim-simple-todo'
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+let g:UltiSnipsListSnippets = '<c-tab>'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 Plug 'vitalk/vim-onoff'
 nnore <LocalLeader>c :Onoff cursorline<cr>
 nnore <LocalLeader>h :Onoff hlsearch<cr>
