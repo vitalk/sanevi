@@ -1,6 +1,7 @@
 " Essential {{{
 
-" I suck at typing
+" I'm suck at typing. Remap keys in command mode may produces unexpected
+" behavior, so keep them as is.
 nnore   ; :
 inore   ; :
 xnore   ; :
