@@ -32,8 +32,8 @@ set shellcmdflag=-c
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Set custom leader keys. The mapleader has to be set before Vundle starts
-" loading plugins.
+" Set custom leader keys. The leader keys has to be set before plugins has
+" been loaded.
 let mapleader=','
 let maplocalleader='\'
 
