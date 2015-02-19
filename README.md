@@ -4,8 +4,32 @@ Another Vim config. Insane enough to be *mine*.
 
 ## Installation
 
-To install clone this repository onto your machine and create symlinks for
-config files in your home directory. The following command does the same.
+- Clone repository onto your machine
+
+```sh
+git clone https://github.com/vitalk/sanevi ~/.vim
+```
+
+- Install the Vim plugin manager, e.g. download [Plug](https://github.com/junegunn/vim-plug) and put it in `~/.vim/autoload`
+
+```sh
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+- Create symlink for `.vimrc` in your home directory
+
+```sh
+ln -s ~/.vim/vimrc ~/.vimrc
+```
+
+- Install the plugins in use
+
+```sh
+vim +PlugInstall +qall
+```
+
+The following command does the same for your:
 
 ```sh
 sh -c "`curl -fsSL https://raw.github.com/vitalk/sanevi/master/install.sh`"
