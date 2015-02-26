@@ -20,6 +20,8 @@ nnore GL :Gitv<cr>
 let g:Gitv_DoNotMapCtrlKey = 1
 au FileType gitv nmap <buffer> <silent> <c-n> <Plug>(gitv-jump-forward)
 au FileType gitv nmap <buffer> <silent> <c-p> <Plug>(gitv-jump-backward)
+" Disable text width column to prevent showing cursor column at 80 character.
+au FileType gitv setl tw=0
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-unimpaired'
