@@ -32,7 +32,7 @@ Another Vim config. Insane enough to be *mine*.
 The following command does the same for you:
 
 ```sh
-sh -c "`curl -fsSL https://raw.github.com/vitalk/sanevi/master/install.sh`"
+bash -c "`curl -fsSL https://raw.github.com/vitalk/sanevi/master/install.sh`"
 ```
 
 ## Customization
