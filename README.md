@@ -57,7 +57,13 @@ augroup END
 - Manage plugins via [Plug](https://github.com/junegunn/vim-plug).
 - Use [Ctrl-P](https://github.com/kien/ctrlp.vim) for fuzzy file/buffer/tag finding.
 - Use [Ag](https://github.com/ggreer/the_silver_searcher) code searcher instead of grep when available.
-- Syntax highlighting for Markdown, JavaScript, CoffeeScript, Jinja, LESS, Ansible, and HTML.
+- Syntax highlighting for
+  [Markdown](https://github.com/plasticboy/vim-markdown),
+  [JavaScript](https://github.com/vitalk/vim-javascript),
+  [CoffeeScript](https://github.com/kchmck/vim-coffee-script),
+  [Jinja](https://github.com/lepture/vim-jinja),
+  [Less](https://github.com/groenewege/vim-less),
+  [Ansible](https://github.com/chase/vim-ansible-yaml), and HTML.
 
 ## License
 
