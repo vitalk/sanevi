@@ -101,7 +101,7 @@ augroup END
 
 augroup ft_yaml
   au!
-  au FileType yaml setlocal sw=2 sts=2 sw=2
+  au FileType yaml setlocal sw=2 sts=2
 augroup END
 
 " }}}
@@ -109,7 +109,7 @@ augroup END
 
 augroup ft_javascript
   au!
-  au FileType javascript setlocal sw=2 sts=2 sw=2
+  au FileType javascript setlocal sw=2 sts=2
 augroup END
 
 " }}}
@@ -117,7 +117,7 @@ augroup END
 
 augroup ft_json
   au!
-  au FileType json setlocal sw=2 sts=2 sw=2
+  au FileType json setlocal sw=2 sts=2
 augroup END
 
 " }}}
