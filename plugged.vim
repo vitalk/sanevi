@@ -3,18 +3,32 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
-" Bring up the output of git status in the preview window.
-nnore gs :Gstatus<CR>
-" Perform a vimdiff against the current file in the given revision.
-nnore gd :Gdiff<CR>
+" Custom git command
+nnore (git) <nop>
+nmap  <leader>g (git)
 " Start git command
-nnore git :Git
+nnore (git)it :Git
+" Bring up the output of git status in the preview window.
+nnore (git)s :Gstatus<cr>
+" Perform a vimdiff against the current file in the given revision.
+nnore (git)d :if &diff<bar>diffupdate<bar>else<bar>Gdiff<bar>endif<cr>
 " Start interactive rebase in current branch
-nnore gri :Git rebase -i HEAD~
+nnore (git)ri :Git rebase -i HEAD~
+" Happy grepping in repository
+nnore (git)re :Ggrep<space>
+nnore (git)l  :Glog<cr>
+nnore (git)b  :Gblame<cr>
+nnore (git)e  :Gedit<cr>
+nnore (git)w  :Gwrite<bar>e<cr>
+"                         ^ reload buffer to update git gutter
+nnore (git)r  :Gread<cr>
+" Stash the changes in a dirty working directory away and pop them back.
+nnore (git)ss :Git stash<cr>
+nnore (git)sp :Git stash pop<cr>
 
 Plug 'vitalk/gitv'
 " Opens gitv in separate tab
-nnore GL :Gitv<cr>
+nnore (git)v :Gitv<cr>
 " Disable default ctrl mappings, so buffer movement keys (<c-hjkl>)
 " work as expected.
 let g:Gitv_DoNotMapCtrlKey = 1
