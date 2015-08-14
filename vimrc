@@ -68,6 +68,10 @@ set lazyredraw                 " don't redraw while executing macros
 set nonumber                   " no line numbering
 set showcmd                    " display incomplete commands
 
+" Use iCursor highlight group to set custom cursor for insert, replace and
+" command modes.
+set guicursor=n-v:block-Cursor/lCursor,c:block-iCursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-iCursor/lCursor,r-cr:hor20-iCursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
 if &t_Co > 2 || has('gui_running')
   syntax on                    " switch syntax highlighting on
   syntax sync fromstart        " syntax synchronization from file start
