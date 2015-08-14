@@ -184,6 +184,13 @@ set spelllang=ru_yo,en_us     " spell check for English and Russian
 set spellsuggest=7            " limit maximum number of the spell suggestions
 
 " }}}
+" Russian keymap {{{
+
+set keymap=russian-jcukenwin
+set iminsert=0                " starts insert mode with english keymap
+set imsearch=0                " starts search with english keymap
+
+" }}}
 " System copy/paste {{{
 
 set clipboard=unnamed         " use clipboard register for all yank, delete and
