@@ -1,4 +1,4 @@
-" Essential {{{
+" Plugged {{{
 
 call plug#begin('~/.vim/plugged')
 
@@ -39,9 +39,16 @@ au FileType gitv setl tw=0
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-scriptease'
+Plug 'godlygeek/tabular'
+Plug 'sjl/vitality.vim'
+Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termtrans = 1
@@ -61,6 +68,14 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+let types = {}
+let types.go = '--language-force=go --golang-types=ftv'
+let types.coffee = '--language-force=coffee --coffee-types=cmfvf'
+let types.markdown = '--language-force=markdown --markdown-types=hik'
+let types.python = '--language-force=python'
+let g:ctrlp_buftag_types = types
+nnore <leader>t :CtrlPBufTag<cr>
+inore <leader>t <esc>:CtrlPBufTag<cr>
 
 Plug 'vitalk/ctrlp-funky'
 nnore <leader>f :CtrlPFunky<cr>
@@ -70,6 +85,22 @@ nnore <leader>e :CtrlPFiletype<cr>
 
 Plug 'vitalk/vim-simple-todo'
 Plug 'jiangmiao/auto-pairs'
+Plug 'kana/vim-textobj-user'
+Plug 'Julian/vim-textobj-brace'
+Plug 'beloglazov/vim-textobj-quotes'
+xmap q iq
+omap q iq
+
+Plug 'mattn/emmet-vim'
+let g:user_emmet_leader_key = '<c-e>'
+let g:user_emmet_next_key = '<c-n>'
+let g:user_emmet_prev_key = '<c-p>'
+
+Plug 'YankRing.vim'
+" Hide yank history inside Vim folder
+let g:yankring_history_dir = '$HOME/.vim'
+" Unlimited cache size
+let g:yankring_max_element_length = 0
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -77,6 +108,40 @@ let g:UltiSnipsListSnippets = '<c-tab>'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+Plug 'airblade/vim-gitgutter'
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_removed = '−'
+let g:gitgutter_sign_modified = '±'
+let g:gitgutter_sign_modified_removed = '∓'
+
+Plug 'scrooloose/syntastic'
+
+Plug 'Shougo/neocomplcache.vim'
+" Enable at startup
+let g:neocomplcache_enable_at_startup = 1
+" Use the smartcase
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+
+let omni = get(g:, 'neocomplcache_force_omni_patterns', {})
+let omni.sql = '[^.[:digit:] *\t]\%(\.\)\%(\h\w*\)\?'
+let omni.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+let g:neocomplcache_force_omni_patterns = omni
+
+inore <expr> <c-g> neocomplcache#undo_completion()
+inore <expr> <c-l> neocomplcache#complete_common_string()
+inore <expr> <cr> pumvisible() && exists("*neocomplete#close_popup") ? neocomplete#close_popup() : "\<cr>"
+
+if (has('python') || has('python3'))
+  Plug 'davidhalter/jedi-vim'
+  let g:jedi#goto_assignments_command = "gd"
+  " We use `neocomplcache` plugin configured to work with `jedi` completion
+  " (https://github.com/davidhalter/jedi-vim/issues/26)
+  let g:jedi#popup_on_dot = 0
+  " Improve performance for big files
+  let g:jedi#show_call_signatures = 1
+endif
 
 Plug 'vitalk/vim-onoff'
 nnore <LocalLeader>c :Onoff cursorline<cr>
