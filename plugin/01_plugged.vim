@@ -46,7 +46,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-scriptease'
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular', {'on': 'Tabularize'}
 Plug 'sjl/vitality.vim'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 
@@ -115,7 +115,7 @@ let g:gitgutter_sign_removed = '−'
 let g:gitgutter_sign_modified = '±'
 let g:gitgutter_sign_modified_removed = '∓'
 
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', {'on': 'SyntasticToggleMode'}
 
 Plug 'Shougo/neocomplcache.vim'
 " Enable at startup
