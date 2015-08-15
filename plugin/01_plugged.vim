@@ -55,6 +55,9 @@ let g:solarized_termtrans = 1
 let g:solarized_contrast = "normal"
 let g:solarized_visibility = "normal"
 
+Plug 'henrik/vim-indexed-search'
+let g:indexed_search_shortmess = 1
+
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_extensions = ['funky', 'filetype']
