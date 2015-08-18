@@ -12,4 +12,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 ln -s ~/.vim/vimrc ~/.vimrc
 
+ln -s ~/.vim/ctags ~/.ctags
+
 vim +PlugInstall +qall

@@ -29,6 +29,12 @@ Another Vim config. Insane enough to be *mine*.
   vim +PlugInstall +qall
   ```
 
+5. Create symlink for `.ctags` in your home directory
+
+  ```sh
+  ln -s ~/.vim/ctags ~/.ctags
+  ```
+
 The following command does the same for you:
 
 ```sh
