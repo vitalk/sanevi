@@ -16,6 +16,17 @@ augroup ft_make
 augroup END
 
 " }}}
+" Python {{{
+
+augroup ft_pytest
+  au!
+  au BufNewFile,BufRead test_*.py,*_test.py,conftest.py setl ft=pytest.python
+  au FileType pytest.python
+        \ compiler pytest |
+        \ nnore <buffer> <s-e> :Make %<cr>
+augroup END
+
+" }}}
 " Markdown {{{
 
 augroup ft_markdown
