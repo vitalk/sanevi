@@ -12,32 +12,32 @@ bash -c "`curl -fsSL https://raw.github.com/vitalk/sanevi/master/install.sh`"
 
 ### For those who actually care about what is done
 
-1. Clone repository onto your machine
+- Clone repository onto your machine
 
   ```sh
   git clone https://github.com/vitalk/sanevi ~/.vim
   ```
 
-2. Install the Vim plugin manager, e.g. download [Plug](https://github.com/junegunn/vim-plug) and put it in `~/.vim/autoload`
+- Install the Vim plugin manager, e.g. download [Plug](https://github.com/junegunn/vim-plug) and put it in `~/.vim/autoload`
 
   ```sh
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   ```
 
-3. Create symlink for `.vimrc` in your home directory
+- Create symlink for `.vimrc` in your home directory
 
   ```sh
   ln -s ~/.vim/vimrc ~/.vimrc
   ```
 
-4. Install the plugins in use
+- Install the plugins in use
 
   ```sh
   vim +PlugInstall +qall
   ```
 
-5. Create symlink for `.ctags` in your home directory
+- Create symlink for `.ctags` in your home directory
 
   ```sh
   ln -s ~/.vim/ctags ~/.ctags
