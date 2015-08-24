@@ -70,7 +70,8 @@ augroup ft_vim
         \ nnore <buffer> q       :call <sid>quithelp()<cr> |
         \ nnore <buffer> <left>  :left<cr> |
         \ nnore <buffer> <right> :right<cr> |
-        \ nnore <buffer> <down>  :center<cr>
+        \ nnore <buffer> <down>  :center<cr> |
+        \ nnore <buffer> <cr>    <c-]>
 augroup END
 
 " }}}
