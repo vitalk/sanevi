@@ -31,16 +31,16 @@ bash -c "`curl -fsSL https://raw.github.com/vitalk/sanevi/master/install.sh`"
   ln -s ~/.vim/vimrc ~/.vimrc
   ```
 
-- Install the plugins in use
-
-  ```sh
-  vim +PlugInstall +qall
-  ```
-
 - Create symlink for `.ctags` in your home directory
 
   ```sh
   ln -s ~/.vim/ctags ~/.ctags
+  ```
+
+- Install the plugins in use
+
+  ```sh
+  vim +PlugInstall +qall
   ```
 
 ## Customization
