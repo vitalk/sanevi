@@ -4,6 +4,14 @@ Another Vim config. Insane enough to be *mine*.
 
 ## Installation
 
+### For lazy people
+
+```sh
+bash -c "`curl -fsSL https://raw.github.com/vitalk/sanevi/master/install.sh`"
+```
+
+### For those who actually care about what is done
+
 1. Clone repository onto your machine
 
   ```sh
@@ -34,12 +42,6 @@ Another Vim config. Insane enough to be *mine*.
   ```sh
   ln -s ~/.vim/ctags ~/.ctags
   ```
-
-The following command does the same for you:
-
-```sh
-bash -c "`curl -fsSL https://raw.github.com/vitalk/sanevi/master/install.sh`"
-```
 
 ## Customization
 
