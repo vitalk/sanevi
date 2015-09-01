@@ -86,6 +86,7 @@ nnore <leader>f :CtrlPFunky<cr>
 Plug 'endel/ctrlp-filetype.vim'
 nnore <leader>e :CtrlPFiletype<cr>
 
+Plug 'vitalk/vim-fancy'
 Plug 'vitalk/vim-simple-todo'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kana/vim-textobj-user'
