@@ -39,7 +39,8 @@ augroup END
 
 augroup ft_jinja
   au!
-  au FileType jinja setlocal ts=2 sts=2 sw=2
+  au FileType jinja setlocal ts=2 sts=2 sw=2 |
+        \ inore  <c-g>  _('')<left><left>
 augroup END
 
 " }}}
