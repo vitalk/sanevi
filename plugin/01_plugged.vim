@@ -89,6 +89,10 @@ nnore <leader>e :CtrlPFiletype<cr>
 Plug 'vitalk/vim-fancy'
 Plug 'vitalk/vim-simple-todo'
 Plug 'jiangmiao/auto-pairs'
+
+Plug 'unblevable/quick-scope'
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 Plug 'kana/vim-textobj-user'
 Plug 'Julian/vim-textobj-brace'
 Plug 'beloglazov/vim-textobj-quotes'
