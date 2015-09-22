@@ -80,8 +80,9 @@ augroup END
 
 augroup ft_quickfix
   au!
-  " Use q to quit any location/quickfix list
-  au FileType qf nnore <buffer> q :cclose<cr>
+  au FileType qf setl cursorline |
+        " Use q to quit any location/quickfix list
+        \ nnore <buffer> q :cclose<cr>
 augroup END
 
 " }}}
