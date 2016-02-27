@@ -73,6 +73,28 @@ augroup END
   [Less](https://github.com/groenewege/vim-less),
   [Ansible](https://github.com/chase/vim-ansible-yaml), and HTML.
 
+### Git goodness
+
+All git-related mappings are start with the `(git)` prefix which, by default,
+mapped to <kbd>[space]g</kbd> (<kbd>space</kbd> + <kbd>g</kbd>). 
+
+Key         | Description
+------------|-------------
+`(git)it`   | Start a git command
+`(git)s`    | Bring up the output of git status in the preview window
+`(git)co`   | Record changes to the repository
+`(git)ca`   | Rewrite `HEAD` commit
+`(git)ap`   | Interactively choose hunks of path between the index and the work tree and add them to the index
+`(git)d`    | Perform a vimdiff against the current file in the given revision
+`(git)ri`   | Start interactive rebase in the current branch
+`(git)re`   | Happy grepping in repository
+`(git)l`    | Load all previous revisions of the current file into the quickfix list
+`(git)b`    | Run git-blame on the file and open the results in a scroll bound vertical split
+`(git)w`    | Write to the current file's path, stage the results and reload buffer (to ensure the git gutter is updated)
+`(git)r`    | Checkout the current file's path
+`(git)ss`   | Stash the changes in a dirty working directory away
+`(git)sp`   | Pop stashed changes back
+
 ## License
 
 Copyright (c) by Vital Kudzelka. Use it for Good not Evil.
