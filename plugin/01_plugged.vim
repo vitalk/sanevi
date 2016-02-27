@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 " Custom git command
 nnore (git) <nop>
-nmap  <leader>g (git)
+nmap  <space>g (git)
 " Start git command
 nnore (git)it :Git
 " Bring up the output of git status in the preview window.
