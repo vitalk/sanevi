@@ -10,6 +10,13 @@ nmap  <leader>g (git)
 nnore (git)it :Git
 " Bring up the output of git status in the preview window.
 nnore (git)s :Gstatus<cr>
+" Record changes to the repository.
+nnore (git)co :Gcommit<cr>
+" Rewrite head commit.
+nnore (git)ca :Gcommit --amend<cr>
+" Interactively choose hunks of path between the index and the work tree and
+" add them to the index.
+nnore (git)ap :Git add . -p
 " Perform a vimdiff against the current file in the given revision.
 nnore (git)d :if &diff<bar>diffupdate<bar>else<bar>Gdiff<bar>endif<cr>
 " Start interactive rebase in current branch
@@ -25,6 +32,8 @@ nnore (git)r  :Gread<cr>
 " Stash the changes in a dirty working directory away and pop them back.
 nnore (git)ss :Git stash<cr>
 nnore (git)sp :Git stash pop<cr>
+nnore (git)ush :Git push origin<space>
+nnore (git)ull :Git pull origin<space>
 
 Plug 'vitalk/gitv'
 " Opens gitv in separate tab
