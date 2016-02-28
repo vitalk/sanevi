@@ -32,8 +32,8 @@ nnore (git)r  :Gread<cr>
 " Stash the changes in a dirty working directory away and pop them back.
 nnore (git)ss :Git stash<cr>
 nnore (git)sp :Git stash pop<cr>
-nnore (git)ush :Git push origin<space>
-nnore (git)ull :Git pull origin<space>
+nnore (git)pu :Gpush origin<space>
+nnore (git)pl :Gpull origin<space>
 
 Plug 'vitalk/gitv'
 " Opens gitv in separate tab
