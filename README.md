@@ -94,6 +94,8 @@ Key         | Description
 `(git)r`    | Checkout the current file's path
 `(git)ss`   | Stash the changes in a dirty working directory away
 `(git)sp`   | Pop stashed changes back
+`(git)pu`   | Start git push command
+`(git)pl`   | Start git pull command
 
 ## License
 
