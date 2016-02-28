@@ -76,7 +76,7 @@ augroup END
 ### Git goodness
 
 All git-related mappings are start with the `(git)` prefix which, by default,
-mapped to <kbd>[space]g</kbd> (<kbd>space</kbd> + <kbd>g</kbd>). 
+mapped to <kbd>space</kbd>+<kbd>g</kbd> combination. 
 
 Key         | Description
 ------------|-------------
