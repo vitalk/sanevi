@@ -116,8 +116,8 @@ let g:user_emmet_prev_key = '<c-p>'
 Plug 'YankRing.vim'
 " Hide yank history inside Vim folder
 let g:yankring_history_dir = '$HOME/.vim'
-" Unlimited cache size
-let g:yankring_max_element_length = 0
+" Limit the element’s lenght to 4M
+let g:yankring_max_element_length = 4194304
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
