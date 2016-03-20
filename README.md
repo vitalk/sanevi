@@ -90,8 +90,8 @@ Key         | Description
 `(git)re`   | Happy grepping in repository
 `(git)l`    | Load all previous revisions of the current file into the quickfix list
 `(git)b`    | Run git-blame on the file and open the results in a scroll bound vertical split
-`(git)w`    | Write to the current file's path, stage the results and reload buffer (to ensure the git gutter is updated)
-`(git)r`    | Checkout the current file's path
+`(git)w`    | Write to the current file’s path, stage the results and reload buffer (to ensure the git gutter is updated)
+`(git)r`    | Checkout the current file’s path
 `(git)ss`   | Stash the changes in a dirty working directory away
 `(git)sp`   | Pop stashed changes back
 `(git)pu`   | Start git push command

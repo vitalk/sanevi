@@ -3,7 +3,7 @@
 " Set as early as possible to avoid unexpected side effects
 set nocompatible
 
-" Buffers can exist on the background, don't have to save when
+" Buffers can exist on the background, don’t have to save when
 " switching them.
 set hidden
 

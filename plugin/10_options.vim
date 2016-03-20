@@ -2,7 +2,7 @@
 
 colorscheme solarized
 set background=light
-set lazyredraw                 " don't redraw while executing macros
+set lazyredraw                 " don’t redraw while executing macros
 set nonumber                   " no line numbering
 set showcmd                    " display incomplete commands
 
@@ -47,7 +47,7 @@ set visualbell                 " shut up
 set noerrorbells               " SHUT UP!
 
 " Display unprintable characters like tabs and trailing spaces. Use fallback
-" characters if terminal doesn't support unicode and unicode characters
+" characters if terminal doesn’t support unicode and unicode characters
 " otherwise.
 set list
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
@@ -85,10 +85,10 @@ set formatoptions+=r " auto insert current comment leader after <Enter> in Inser
 set formatoptions-=o " auto insert current comment leader after <o/O> in Normal
 set formatoptions+=q " allow formatting of comments with "gq"
 set formatoptions-=w " trail white space indicates paragraph continues next line
-set formatoptions-=a " don't reformat paragraphs when text inserted or deleted
+set formatoptions-=a " don’t reformat paragraphs when text inserted or deleted
 set formatoptions+=n " when formatting, recognize numbered lists
 set formatoptions-=m " also break at a multi-byte character above 255
-set formatoptions+=2 " when formatting, use second line's indent
+set formatoptions+=2 " when formatting, use second line’s indent
 
 " }}}
 
@@ -105,7 +105,7 @@ set smartcase        " ...otherwise search uppercase
 com -nargs=+ -complete=file -bar Ag
       \ silent! grep! <args>|copen|redraw!
 
-" Add abbreviation, that works only when it's the first word on command
+" Add abbreviation, that works only when it’s the first word on command
 " line.
 cabbr ag <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'Ag' : 'ag')<cr>
 
