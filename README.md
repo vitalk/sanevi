@@ -71,7 +71,8 @@ augroup END
   [CoffeeScript](https://github.com/kchmck/vim-coffee-script),
   [Jinja](https://github.com/lepture/vim-jinja),
   [Less](https://github.com/groenewege/vim-less),
-  [Ansible](https://github.com/chase/vim-ansible-yaml), and HTML.
+  [Ansible](https://github.com/chase/vim-ansible-yaml),
+  and [HTML](https://github.com/othree/html5.vim).
 
 ### Git goodness
 
