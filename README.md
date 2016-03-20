@@ -99,6 +99,6 @@ Key         | Description
 
 ## License
 
-Copyright (c) by Vital Kudzelka. Use it for Good not Evil.
-
 Distributed under the [MIT license](http://mit-license.org/vitalk).
+
+© 2016 by Vital Kudzelka. Use it for Good not Evil.
