@@ -98,6 +98,18 @@ Key         | Description
 `(git)pu`   | Start git push command
 `(git)pl`   | Start git pull command
 
+### Markdown goodness
+
+- Convert the line under cursor into appropriate markdown header
+  via the <kbd>leader</kbd>+<kbd>1-6</kbd> combinations;
+
+- Open fenced code block into separate buffer (with appropriate filetype,
+  syntax highlighting and snippets) via the <kbd>shift</kbd>+<kbd>e</kbd>;
+
+- A sane and [useful mappings](https://github.com/vitalk/vim-simple-todo) to
+  create and manage task lists. 
+
+
 ## License
 
 Distributed under the [MIT license](http://mit-license.org/vitalk).
