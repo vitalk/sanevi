@@ -102,6 +102,22 @@ augroup ft_javascript
 augroup END
 
 " }}}
+" Stylus {{{
+
+augroup ft_stylus
+  au!
+  au FileType stylus setl sw=2 sts=2
+augroup END
+
+" }}}
+" Handlebars {{{
+
+augroup ft_handlebars
+  au!
+  au FileType html.handlebars setl sw=2 sts=2
+augroup END
+
+" }}}
 " JSON {{{
 
 augroup ft_json
@@ -112,4 +128,3 @@ augroup END
 " }}}
 
 " }}}
-
