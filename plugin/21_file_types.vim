@@ -126,5 +126,12 @@ augroup ft_json
 augroup END
 
 " }}}
+" Ansible inventory {{{
 
+augroup ft_ansible_inventory
+  au!
+  au BufNewFile,BufRead **/host_vars/*,**/group_vars/* set ft=ansible
+augroup END
+
+" }}}
 " }}}
