@@ -55,6 +55,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-scriptease'
+Plug 'tpope/vim-vinegar'
 Plug 'godlygeek/tabular', {'on': 'Tabularize'}
 Plug 'sjl/vitality.vim'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
