@@ -125,7 +125,7 @@ set spellsuggest=7            " limit maximum number of the spell suggestions
 " }}}
 " Russian keymap {{{
 
-set keymap=russian-jcukenwin
+set keymap=russian-jcukenmac
 set iminsert=0                " starts insert mode with english keymap
 set imsearch=0                " starts search with english keymap
 
