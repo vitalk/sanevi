@@ -133,7 +133,8 @@ let g:gitgutter_sign_removed = '−'
 let g:gitgutter_sign_modified = '±'
 let g:gitgutter_sign_modified_removed = '∓'
 
-Plug 'scrooloose/syntastic', {'on': 'SyntasticToggleMode'}
+Plug 'w0rp/ale'
+let g:ale_linter_aliases = {'less': 'css'}
 
 Plug 'Shougo/neocomplcache.vim'
 " Enable at startup
