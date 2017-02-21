@@ -136,28 +136,11 @@ let g:gitgutter_sign_modified_removed = '∓'
 Plug 'w0rp/ale'
 let g:ale_linter_aliases = {'less': 'css'}
 
-Plug 'Shougo/neocomplcache.vim'
-" Enable at startup
-let g:neocomplcache_enable_at_startup = 1
-" Use the smartcase
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_min_syntax_length = 3
-
-let omni = get(g:, 'neocomplcache_force_omni_patterns', {})
-let omni.sql = '[^.[:digit:] *\t]\%(\.\)\%(\h\w*\)\?'
-let omni.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-let g:neocomplcache_force_omni_patterns = omni
-
-inore <expr> <c-g> neocomplcache#undo_completion()
-inore <expr> <c-l> neocomplcache#complete_common_string()
-inore <expr> <cr> pumvisible() && exists("*neocomplete#close_popup") ? neocomplete#close_popup() : "\<cr>"
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 
 if (has('python') || has('python3'))
   Plug 'davidhalter/jedi-vim'
   let g:jedi#goto_assignments_command = "gd"
-  " We use `neocomplcache` plugin configured to work with `jedi` completion
-  " (https://github.com/davidhalter/jedi-vim/issues/26)
-  let g:jedi#popup_on_dot = 0
   " Improve performance for big files
   let g:jedi#show_call_signatures = 1
 endif
