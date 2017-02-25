@@ -64,7 +64,9 @@ augroup END
 
 - Manage plugins via [Plug](https://github.com/junegunn/vim-plug).
 - Use [Ctrl-P](https://github.com/kien/ctrlp.vim) for fuzzy file/buffer/tag finding.
-- Use [ripgrep](https://github.com/BurntSushi/ripgrep) code searcher instead of grep when available.
+- Use [ripgrep](https://github.com/BurntSushi/ripgrep) code searcher instead of `grep` when available.
+- Asynchronous code-linting via [ALE](https://github.com/w0rp/ale).
+- Code-completion via [YCM](https://valloric.github.io/YouCompleteMe/).
 - Syntax highlighting for
   [Markdown](https://github.com/plasticboy/vim-markdown),
   [JavaScript](https://github.com/vitalk/vim-javascript),
