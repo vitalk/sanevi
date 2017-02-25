@@ -109,10 +109,11 @@ com -nargs=+ -complete=file -bar Ag
 " line.
 cabbr ag <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'Ag' : 'ag')<cr>
 
-" Use The Silver Searcher (https://github.com/ggreer/the_silver_searcher) when
+" Use ripgrep (https://github.com/BurntSushi/ripgrep) when
 " available.
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
+if executable('rg')
+  set grepprg=rg\ --vimgrep
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
 " }}}

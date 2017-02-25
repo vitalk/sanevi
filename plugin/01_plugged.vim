@@ -75,10 +75,11 @@ let g:ctrlp_cmd = 'CtrlP'                       " open ctrlp in file find mode
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'   " set the directory to store the cache files
 let g:ctrlp_clear_cache_on_exit = 0             " enable cross-session caching
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|eggs|*\.py[co]|*\.sw[po])$'
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " ag is fast enough that CtrlP doesn't need to cache
+" Use ripgrep in CtrlP for listing files. Lightning fast and
+" respects .gitignore.
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  " rg is fast enough that CtrlP doesn’t need to cache
   let g:ctrlp_use_caching = 0
 endif
 let types = {}
