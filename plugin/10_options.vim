@@ -102,7 +102,7 @@ set ignorecase       " search is case insensitive when search term is all
 set smartcase        " ...otherwise search uppercase
 
 " Search for the provided text and open a quickfix list with matches.
-com -nargs=+ -complete=file -bar Ag
+com! -nargs=+ -complete=file -bar Ag
       \ silent! grep! <args>|copen|redraw!
 
 " Add abbreviation, that works only when it’s the first word on command
