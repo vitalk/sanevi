@@ -138,6 +138,8 @@ Plug 'w0rp/ale'
 let g:ale_linter_aliases = {'less': 'css'}
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 
 if (has('python') || has('python3'))
   Plug 'davidhalter/jedi-vim'
