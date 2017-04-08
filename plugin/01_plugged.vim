@@ -166,6 +166,7 @@ Plug 'vitalk/vim-javascript'
 Plug 'leshill/vim-json'
 Plug 'tpope/vim-jdaddy'
 Plug 'chase/vim-ansible-yaml'
+Plug 'mustache/vim-mustache-handlebars'
 
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
