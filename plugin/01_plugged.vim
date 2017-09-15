@@ -162,7 +162,12 @@ Plug 'lepture/vim-jinja'
 Plug 'groenewege/vim-less'
 Plug 'vitalk/pytest-vim-compiler'
 Plug 'kchmck/vim-coffee-script'
-Plug 'vitalk/vim-javascript'
+
+Plug 'pangloss/vim-javascript'
+let g:javascript_plugin_jsdoc = 1
+
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
 Plug 'leshill/vim-json'
 Plug 'tpope/vim-jdaddy'
 Plug 'chase/vim-ansible-yaml'
