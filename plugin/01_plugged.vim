@@ -75,11 +75,17 @@ let g:ctrlp_extensions = ['funky', 'filetype']
 let g:ctrlp_cmd = 'CtrlP'                       " open ctrlp in file find mode
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'   " set the directory to store the cache files
 let g:ctrlp_clear_cache_on_exit = 0             " enable cross-session caching
-let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|eggs|*\.py[co]|*\.sw[po])$'
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+      \ 'file': '\v\.(exe|so|dll)$',
+      \ 'js': '\v[\/](node_modules)$',
+      \ 'python': '\v[\/](*\.py[co]|eggs)$',
+      \ 'system': '\v[\/](*\.sw[po]$',
+      \ }
 " Use ripgrep in CtrlP for listing files. Lightning fast and
 " respects .gitignore.
 if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob "!*.py[co]" --glob "!node_modules*"'
   " rg is fast enough that CtrlP doesn’t need to cache
   let g:ctrlp_use_caching = 0
 endif
@@ -103,7 +109,7 @@ Plug 'vitalk/vim-simple-todo'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'unblevable/quick-scope'
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_highlight_on_keys = ['f', 'F']
 
 Plug 'kana/vim-textobj-user'
 Plug 'Julian/vim-textobj-brace'
@@ -116,7 +122,7 @@ let g:user_emmet_leader_key = '<c-e>'
 let g:user_emmet_next_key = '<c-n>'
 let g:user_emmet_prev_key = '<c-p>'
 
-Plug 'YankRing.vim'
+Plug 'vim-scripts/YankRing.vim'
 " Hide yank history inside Vim folder
 let g:yankring_history_dir = '$HOME/.vim'
 " Limit the element’s lenght to 4M
@@ -124,6 +130,7 @@ let g:yankring_max_element_length = 4194304
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', '/Users/vital/.vim/UltiSnips']
 let g:UltiSnipsListSnippets = '<c-tab>'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
@@ -137,16 +144,50 @@ let g:gitgutter_sign_modified_removed = '∓'
 
 Plug 'w0rp/ale'
 let g:ale_linter_aliases = {'less': 'css'}
+let g:ale_emit_conflict_warnings = 0
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 
 if (has('python') || has('python3'))
+  Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+  let g:pymode_options_max_line_length = 79
+
+  let g:pymode_syntax = 1       " enable syntax highlighting
+
+  let g:pymode_folding = 0      " disable experimental folding feature
+
+  let g:pymode_motion = 1       " support vim motion for python objects
+                                " such as functions, classes and methods,
+                                " e.g. [[ ]] [M ]M aC iC aM iM
+
+  let g:pymode_options = 0      " disable custom options defaults for new
+                                " buffers, my defaults are sane enought to use
+                                " them instead of this ones
+
+  let g:pymode_virtualenv = 0   " let my shell environment manage virtualenvs
+
+
+  let g:pymode_doc = 0          " use jedi-vim instead
+  let g:pymode_rope = 0         " use jedi-vim instead
+  let g:pymode_indent = 0       " use vim-python-pep8-indent instead
+
+  let g:pymode_breakpoint = 1
+
+  let g:pymode_lint = 0
+
+  Plug 'Vimjas/vim-python-pep8-indent'
+  let g:python_pep8_indent_multiline_string = 1
+  let g:python_pep8_indent_hang_closing = 0
+
   Plug 'davidhalter/jedi-vim'
   let g:jedi#goto_assignments_command = "gd"
-  " Improve performance for big files
-  let g:jedi#show_call_signatures = 1
+
+  let g:jedi#popup_on_dot = 1                 " start completion on dot
+
+  let g:jedi#show_call_signatures = 0         " improve performance for big
+                                              " files
 endif
 
 Plug 'vitalk/vim-onoff'
