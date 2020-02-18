@@ -11,6 +11,7 @@ iabb  lt <=
 iabb  gt >=
 iabb  pe +=
 iabb  hr =>
+iabb  lr ->
 
 iabbr ture true
 
