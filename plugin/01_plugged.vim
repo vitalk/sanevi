@@ -174,6 +174,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'leshill/vim-json'
 Plug 'tpope/vim-jdaddy'
 Plug 'chase/vim-ansible-yaml'
+Plug 'saltstack/salt-vim'
 Plug 'mustache/vim-mustache-handlebars'
 
 Plug 'plasticboy/vim-markdown'
