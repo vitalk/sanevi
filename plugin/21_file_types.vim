@@ -23,7 +23,7 @@ augroup ft_pytest
   au BufNewFile,BufRead test_*.py,*_test.py,conftest.py setl ft=pytest.python
   au FileType pytest.python
         \ nnore <buffer> <s-e> :Dispatch
-        \ python ./oomnitza_commands/oomnitza.py test
+        \ python -Wignore ./oomnitza_commands/oomnitza.py test
         \ ./etc/oo_test.ini --verbosity DEBUG --workdir %
         \ <cr>
 
