@@ -24,7 +24,7 @@ augroup ft_pytest
   au FileType pytest.python
         \ nnore <buffer> <s-e> :Dispatch
         \ python -Wignore ./oomnitza_commands/oomnitza.py test
-        \ ./etc/oo_test.ini --verbosity DEBUG --workdir %
+        \ ./etc/oo_test.ini --verbosity 2 --workdir %
         \ <cr>
 
   au FileType python
