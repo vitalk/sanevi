@@ -142,6 +142,8 @@ let g:gitgutter_sign_removed = '−'
 let g:gitgutter_sign_modified = '±'
 let g:gitgutter_sign_modified_removed = '∓'
 
+Plug 'itchyny/lightline.vim'
+
 Plug 'w0rp/ale'
 let g:ale_linter_aliases = {'less': 'css'}
 let g:ale_emit_conflict_warnings = 0
