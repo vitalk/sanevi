@@ -150,17 +150,49 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-co
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 
+if has('nvim')
+  let g:python_host_prog = '/Users/vital/.pyenv/versions/nvim_py27/bin/python'
+  let g:python3_host_prog = '/Users/vital/.pyenv/versions/nvim_py3/bin/python3'
+
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+
+  let g:deoplete#auto_complete_delay = 150
+
+  " Ignore jedi errors for completions
+  let g:deoplete#sources#jedi#ignore_errors = 1
+
+endif
+
 if (has('python') || has('python3'))
+  Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+
+  " Mark selected nodes (those with the same name and scope as the one under
+  " the cursor). Set to 2 to highlight the node currently under the cursor,
+  " too.
+  let g:semshi#mark_selected_nodes = 2
+
+  " Custom semshi command
+  nnore (semshi) <nop>
+  nmap  <space>s (semshi)
+
+  nnore (semshi)rr :Semshi rename<cr>
+
+  nnore ]<space>  :Semshi goto name next<cr>
+  nnore [<space>  :Semshi goto name prev<cr>
+
+  nnore ]c        :Semshi goto class next<cr>
+  nnore [c        :Semshi goto class prev<cr>
+
+  nnore ]f        :Semshi goto function next<cr>
+  nnore [f        :Semshi goto function prev<cr>
+
   Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-  let g:pymode_options_max_line_length = 79
+  let g:pymode_options_max_line_length = 100
 
   let g:pymode_syntax = 1       " enable syntax highlighting
 
   let g:pymode_folding = 0      " disable experimental folding feature
-
-  let g:pymode_motion = 1       " support vim motion for python objects
-                                " such as functions, classes and methods,
-                                " e.g. [[ ]] [M ]M aC iC aM iM
 
   let g:pymode_options = 0      " disable custom options defaults for new
                                 " buffers, my defaults are sane enought to use
@@ -173,14 +205,19 @@ if (has('python') || has('python3'))
   let g:pymode_rope = 0         " use jedi-vim instead
   let g:pymode_indent = 0       " use vim-python-pep8-indent instead
 
-  let g:pymode_breakpoint = 1
+  let g:pymode_breakpoint = 0
 
   let g:pymode_lint = 0
+
+  let g:pymode_motion = 0       " support vim motion for python objects
+                                " such as functions, classes and methods,
+                                " e.g. [[ ]] [M ]M aC iC aM iM
 
   Plug 'Vimjas/vim-python-pep8-indent'
   let g:python_pep8_indent_multiline_string = 1
   let g:python_pep8_indent_hang_closing = 0
 
+  Plug 'deoplete-plugins/deoplete-jedi'
   Plug 'davidhalter/jedi-vim'
   let g:jedi#goto_assignments_command = "gd"
 
@@ -188,6 +225,10 @@ if (has('python') || has('python3'))
 
   let g:jedi#show_call_signatures = 0         " improve performance for big
                                               " files
+
+  Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+  nnore <c-y> :call yapf#YAPF()<cr>
+  inore <c-y> <c-o>:call yapf#YAPF()<cr>
 endif
 
 Plug 'vitalk/vim-onoff'

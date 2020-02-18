@@ -22,8 +22,14 @@ augroup ft_pytest
   au!
   au BufNewFile,BufRead test_*.py,*_test.py,conftest.py setl ft=pytest.python
   au FileType pytest.python
-        \ compiler pytest |
-        \ nnore <buffer> <s-e> :Make %<cr>
+        \ nnore <buffer> <s-e> :Dispatch
+        \ python ./oomnitza_commands/oomnitza.py test
+        \ ./etc/oo_test.ini --verbosity DEBUG --workdir %
+        \ <cr>
+
+  au FileType python
+        \ call CustomSemshiHl()
+
 augroup END
 
 " }}}
