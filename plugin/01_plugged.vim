@@ -162,6 +162,8 @@ Plug 'lepture/vim-jinja'
 Plug 'groenewege/vim-less'
 Plug 'vitalk/pytest-vim-compiler'
 Plug 'kchmck/vim-coffee-script'
+Plug 'wavded/vim-stylus'
+Plug 'cakebaker/scss-syntax.vim'
 
 Plug 'pangloss/vim-javascript'
 let g:javascript_plugin_jsdoc = 1
