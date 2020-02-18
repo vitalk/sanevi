@@ -103,6 +103,9 @@ nore <down> :resize +5<cr>
 nore <left> :vertical resize -5<cr>
 nore <right> :vertical resize +5<cr>
 
+" Expand the current pane as much as possible
+nore <c-w>O <c-w><bar><c-w>_
+
 " }}}
 
 " }}}
