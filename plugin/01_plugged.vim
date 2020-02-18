@@ -240,6 +240,8 @@ if (has('python') || has('python3'))
   Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
   nnore <c-y> :call yapf#YAPF()<cr>
   inore <c-y> <c-o>:call yapf#YAPF()<cr>
+
+  Plug 'psf/black'
 endif
 
 Plug 'vitalk/vim-onoff'
