@@ -148,6 +148,7 @@ Plug 'w0rp/ale'
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'python': [
+      \   'pylint',
       \   'mypy',
       \   'pyre',
       \   'yapf',
