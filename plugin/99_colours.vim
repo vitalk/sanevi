@@ -34,7 +34,7 @@ fun CustomSemshiHl()
   " hi semshiUnresolved      ctermfg=226 guifg=#ffff00 cterm=underline gui=underline
   hi def link semshiUnresolved      Special
 
-  hi semshiSelected          cterm=bold ctermfg=1 guifg=Red guibg=White
+  hi semshiSelected          cterm=bold ctermfg=Red ctermbg=NONE guifg=Red guibg=White
 
   hi def link  semshiErrorSign      pythonError
   hi def link  semshiErrorChar      pythonError
