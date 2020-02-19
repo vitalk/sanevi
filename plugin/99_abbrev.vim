@@ -14,5 +14,6 @@ iabb  hr =>
 iabb  lr ->
 
 iabbr ture true
+iabbr none None
 
 " }}}
