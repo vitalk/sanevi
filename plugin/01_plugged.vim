@@ -184,6 +184,9 @@ if (has('python') || has('python3'))
   " too.
   let g:semshi#mark_selected_nodes = 2
 
+  " Enable plugin for pytest.python files as well
+  let g:semshi#filetypes = ['python', 'pytest.python']
+
   " Custom semshi command
   nnore (semshi) <nop>
   nmap  <space>s (semshi)
