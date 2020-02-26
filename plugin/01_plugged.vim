@@ -280,6 +280,8 @@ Plug 'posva/vim-vue'
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 
+Plug 'raimon49/requirements.txt.vim'
+
 call plug#end()
 
 " }}}
