@@ -42,4 +42,41 @@ fun CustomSemshiHl()
   sign define semshiError text=>> texthl=semshiErrorSign
 endf
 
+
+fun PytestSyntax() abort
+  syn match PytestPlatform              '\v\|\|\s+(platform(.*))'
+  syn match PytestTitleDecoration       "\v\={2,}"
+  syn match PytestTitle                 "\v\|\|\s+(test session starts)\s+"
+  syn match PytestCollecting            "\v\|\|\s+((collected|collecting)\s+(.*))"
+  syn match PytestPythonFile            "\v\s+((.*.py\s+))"
+  syn match PytestFooterFail            "\v\|\|\s+((.*)(failed|error)(.*) in(.*))"
+  syn match PytestFooterExtra           "\v\|\|\s+((.*) selected(.*))\s+"
+  syn match PytestFooter                "\v\|\|\s+((.*)passed(.* )in(.*))\=+\s+"
+  syn match PytestFailures              "\v\s+(FAILURES|ERRORS)\s+"
+  syn match PytestErrors                "\v\|\|\s+E\s+(.*)"
+  syn match PytestDelimiter             "\v_{3,}"
+  syn match PytestFailedTest            "\v\|\|\s+_{3,}\s+(.*)\s+_{3,}"
+  syn match PytestLine                  "\v\|\|(\s{3}|\s\>)\s+(.*)"
+  syn match PytestAssertLine            "\v(.*.py:\d+:\sAssertionError)"
+
+  hi PytestCollecting     cterm=bold ctermbg=15 ctermfg=10 guifg=Black guibg=White
+  hi PytestFooter         cterm=bold ctermbg=15 ctermfg=10 guifg=Black guibg=White
+
+  hi def link PytestLine                PytestCollecting
+
+  hi def link PytestPythonFile          qfFileName
+  hi def link PytestPlatform            Special
+  hi def link PytestTitle               String
+  hi def link PytestTitleDecoration     qfSeparator
+  hi def link PytestFooterFail          qfError
+  hi def link PytestFooter              String
+  hi def link PytestFailures            qfSeparator
+  hi def link PytestDelimiter           qfSeparator
+  hi def link PytestErrors              qfError
+  hi def link PytestFailedTest          qfError
+  hi def link PytestFooterExtra         PytestCollecting
+  hi def link PytestAssertLine          qfError
+
+endf
+
 " }}}

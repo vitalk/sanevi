@@ -97,6 +97,9 @@ augroup ft_quickfix
   au FileType qf
         \ nnore <buffer> s <c-w><enter><c-w>l
 
+  au FileType qf
+        \ call PytestSyntax()
+
 augroup END
 
 " }}}
