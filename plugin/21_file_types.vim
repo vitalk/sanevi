@@ -87,7 +87,10 @@ augroup END
 augroup ft_quickfix
   au!
   " Use q to quit any location/quickfix list
-  au FileType qf setl cursorline |
+  au FileType qf
+        \ setl nocursorline |
+        \ setl listchars= |
+        \ setl tw=0 |
         \ nnore <buffer> q :cclose<cr>
 
   " Use s to open file in split
