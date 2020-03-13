@@ -185,6 +185,14 @@ set completeopt+=preview                          " enable preview window
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 nnore gd  :LspDefinition<cr>
 
+Plug 'prabirshrestha/asyncomplete-file.vim'
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+      \ 'name': 'file',
+      \ 'whitelist': ['*'],
+      \ 'priority': 10,
+      \ 'completor': function('asyncomplete#sources#file#completor')
+      \ }))
+
 if executable('pyls')
   " pip install python-language-server
   au User lsp_setup call lsp#register_server({
