@@ -183,8 +183,6 @@ Plug 'prabirshrestha/asyncomplete.vim'
 set completeopt+=preview                          " enable preview window
 
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-nnore gd  :LspDefinition<cr>
-
 Plug 'prabirshrestha/asyncomplete-file.vim'
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
       \ 'name': 'file',

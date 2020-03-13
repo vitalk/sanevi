@@ -22,4 +22,18 @@ augroup last_position
         \ endif
 augroup END
 
+fun! s:on_lsp_buffer_enabled() abort
+  setl omnifunc=lsp#complete
+  setl signcolumn=yes
+
+  nmap <buffer> gd <plug>(lsp-definition)
+endfun
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server
+    " registered.
+    au User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
 " }}}
