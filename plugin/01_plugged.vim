@@ -193,12 +193,24 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
       \ 'completor': function('asyncomplete#sources#file#completor')
       \ }))
 
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'priority': 20,
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+
 if executable('pyls')
   " pip install python-language-server
   au User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
+        \ 'priority': 100,
         \ })
 endif
 
