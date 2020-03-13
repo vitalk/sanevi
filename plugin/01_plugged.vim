@@ -176,6 +176,24 @@ if has('nvim')
 
 endif
 
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+set completeopt+=preview                          " enable preview window
+
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+nnore gd  :LspDefinition<cr>
+
+if executable('pyls')
+  " pip install python-language-server
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
 if (has('python') || has('python3'))
   Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
@@ -231,15 +249,6 @@ if (has('python') || has('python3'))
   Plug 'Vimjas/vim-python-pep8-indent'
   let g:python_pep8_indent_multiline_string = 1
   let g:python_pep8_indent_hang_closing = 0
-
-  Plug 'deoplete-plugins/deoplete-jedi'
-  Plug 'davidhalter/jedi-vim'
-  let g:jedi#goto_assignments_command = "gd"
-
-  let g:jedi#popup_on_dot = 1                 " start completion on dot
-
-  let g:jedi#show_call_signatures = 0         " improve performance for big
-                                              " files
 
   Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
   nnore <c-y> :call yapf#YAPF()<cr>
