@@ -283,6 +283,8 @@ nnore <LocalLeader>p :Onoff paste<cr>
 nnore <LocalLeader>s :Onoff spell<cr>
 nnore <LocalLeader>i :Onoff list<cr>
 
+Plug 'tpope/vim-obsession'
+
 Plug 'othree/html5.vim'
 Plug 'othree/csscomplete.vim'
 Plug 'lepture/vim-jinja'
