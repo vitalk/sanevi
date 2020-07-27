@@ -311,6 +311,10 @@ let g:vim_markdown_folding_disabled = 1
 
 Plug 'raimon49/requirements.txt.vim'
 
+Plug 'junegunn/goyo.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 " }}}
