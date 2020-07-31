@@ -62,9 +62,9 @@ Plug 'sjl/vitality.vim'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 
 Plug 'altercation/vim-colors-solarized'
-let g:solarized_termtrans = 1
-let g:solarized_contrast = "normal"
 let g:solarized_visibility = "normal"
+let g:solarized_termcolors = 16
+let g:solarized_contrast = "normal"
 
 Plug 'henrik/vim-indexed-search'
 let g:indexed_search_shortmess = 1
@@ -154,9 +154,23 @@ let g:ale_linters = {
       \   'yapf',
       \   'vulture'
       \ ],
+      \ 'rust': [
+      \   'rls',
+      \   'cargo',
+      \   'rustc'
+      \ ]
+      \ }
+
+let g:ale_fixers = {
+      \ 'rust': [
+      \   'rustfmt'
+      \ ]
       \ }
 
 let g:ale_emit_conflict_warnings = 0
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -179,6 +193,9 @@ endif
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+let g:lsp_virtual_text_enabled = 1                " virtual text feature
+let g:lsp_log_file = expand('~/vim-lsp.log')
+
 Plug 'prabirshrestha/asyncomplete.vim'
 set completeopt+=preview                          " enable preview window
 
@@ -212,6 +229,15 @@ if executable('pyls')
         \ })
 endif
 
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
 if (has('python') || has('python3'))
   Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
@@ -222,6 +248,9 @@ if (has('python') || has('python3'))
 
   " Enable plugin for pytest.python files as well
   let g:semshi#filetypes = ['python', 'pytest.python']
+
+  let g:semshi#no_default_builtin_highlihts = 0
+  let g:semshi#simplify_markup = 0
 
   " Custom semshi command
   nnore (semshi) <nop>
@@ -272,7 +301,11 @@ if (has('python') || has('python3'))
   nnore <c-y> :call yapf#YAPF()<cr>
   inore <c-y> <c-o>:call yapf#YAPF()<cr>
 
-  Plug 'psf/black'
+  Plug 'psf/black', { 'tag': '19.10b0' }
+
+  Plug 'fisadev/vim-isort'
+  let g:vim_isort_python_version = 'python3'
+
 endif
 
 Plug 'vitalk/vim-onoff'

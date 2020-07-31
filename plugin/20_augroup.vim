@@ -26,7 +26,16 @@ fun! s:on_lsp_buffer_enabled() abort
   setl omnifunc=lsp#complete
   setl signcolumn=yes
 
+  nnore (lsp) <nop>
+  nmap <space> (lsp)
   nmap <buffer> gd <plug>(lsp-definition)
+  " nmap <buffer> gr <plug>(lsp-references)
+  " nmap <buffer> gi <plug>(lsp-implementation)
+  " nmap <buffer> gt <plug>(lsp-type-definition)
+  nmap <buffer> (lsp)rr <plug>(lsp-rename)
+  " nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
+  " nmap <buffg:lsp_highlights_enableder> ]g <Plug>(lsp-next-diagnostic)
+  nmap <buffer> K <plug>(lsp-hover)
 endfun
 
 augroup lsp_install
