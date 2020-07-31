@@ -36,12 +36,15 @@ augroup END
 
 augroup ft_pytest
   au!
-  au BufNewFile,BufRead test_*.py,*_test.py,conftest.py setl ft=pytest.python
-  au FileType pytest.python
-        \ nnore <buffer> <s-e> :Dispatch
-        \ python -Wignore ./oomnitza_commands/oomnitza.py test
-        \ ./etc/oo_test.ini --verbosity 2 --workdir %
-        \ <cr>
+  au BufNewFile,BufRead *test*.py,test_*.py,*_test.py,conftest.py
+        \ setl ft=python |
+        \ nnore <buffer> <s-d> :Dispatch<cr>
+
+  au BufNewFile,BufRead, */test/db_tests/**.py
+        \ let b:dispatch = 'python -Wignore ./oomnitza_commands/oomnitza.py test ./etc/oo_test.ini --verbosity 2 --workdir %'
+
+  au BufNewFile,BufRead, */oomnitza_workflow/tests/**.py
+        \ let b:dispatch = 'COLUMNS=120 unittest=% make -f /Users/vital/Development/Web/Oomnitza/automate/Makefile.wf test'
 
   au FileType python
         \ call CustomSemshiHl()
