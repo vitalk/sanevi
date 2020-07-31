@@ -40,6 +40,10 @@ fun CustomSemshiHl()
   hi def link  semshiErrorChar      pythonError
 
   sign define semshiError text=>> texthl=semshiErrorSign
+
+  hi def link  pythonBuiltinObj      Structure
+  hi def link  pythonBuiltinType     Type
+  hi def link  pythonFunction        Function
 endf
 
 
