@@ -16,6 +16,15 @@ augroup ft_make
 augroup END
 
 " }}}
+" Rust {{{
+
+augroup ft_rust
+  au!
+  au FileType rust
+        \ nnore <buffer> <s-d> :Dispatch<cr>
+augroup END
+
+" }}}
 " Python {{{
 
 augroup ft_pytest
