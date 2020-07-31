@@ -20,8 +20,15 @@ augroup END
 
 augroup ft_rust
   au!
+  au BufRead,BufNewFile Cargo.toml,Cargo.lock
+        \ let b:dispatch = 'cargo build'
+
   au FileType rust
-        \ nnore <buffer> <s-d> :Dispatch<cr>
+        \ compiler cargo |
+        \ setl makeprg=cargo |
+        \ nnore <buffer> <s-e> :Dispatch cargo run<cr> |
+        \ nnore <buffer> <s-d> :Dispatch cargo check<cr>
+
 augroup END
 
 " }}}
