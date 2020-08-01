@@ -69,41 +69,6 @@ let g:solarized_contrast = "normal"
 Plug 'henrik/vim-indexed-search'
 let g:indexed_search_shortmess = 1
 
-Plug 'kien/ctrlp.vim'
-let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_extensions = ['funky', 'filetype']
-let g:ctrlp_cmd = 'CtrlP'                       " open ctrlp in file find mode
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'   " set the directory to store the cache files
-let g:ctrlp_clear_cache_on_exit = 0             " enable cross-session caching
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-      \ 'file': '\v\.(exe|so|dll)$',
-      \ 'js': '\v[\/](node_modules)$',
-      \ 'python': '\v[\/](*\.py[co]|eggs)$',
-      \ 'system': '\v[\/](*\.sw[po]$',
-      \ }
-" Use ripgrep in CtrlP for listing files. Lightning fast and
-" respects .gitignore.
-if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob "!*.py[co]" --glob "!node_modules*"'
-  " rg is fast enough that CtrlP doesn’t need to cache
-  let g:ctrlp_use_caching = 0
-endif
-let types = {}
-let types.go = '--language-force=go --golang-types=ftv'
-let types.coffee = '--language-force=coffee --coffee-types=cmfvf'
-let types.markdown = '--language-force=markdown --markdown-types=hik'
-let types.python = '--language-force=python'
-let g:ctrlp_buftag_types = types
-nnore <leader>t :CtrlPBufTag<cr>
-inore <leader>t <esc>:CtrlPBufTag<cr>
-
-Plug 'vitalk/ctrlp-funky'
-nnore <leader>f :CtrlPFunky<cr>
-
-Plug 'endel/ctrlp-filetype.vim'
-nnore <leader>e :CtrlPFiletype<cr>
-
 Plug 'vitalk/vim-fancy'
 Plug 'vitalk/vim-simple-todo'
 Plug 'jiangmiao/auto-pairs'
@@ -307,6 +272,36 @@ if (has('python') || has('python3'))
   let g:vim_isort_python_version = 'python3'
 
 endif
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+let g:fzf_layout = {
+      \ 'window': {
+      \   'width': 0.7,
+      \   'height': 0.5
+      \ }}
+
+let g:fzf_colors = {
+      \ 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Special'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Error'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment']
+      \ }
+
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+nnore (git)h    :Commits<cr>
+nnore <leader>f :BLines<cr>
+nnore <leader>b :Buffers<cr>
+nnore <leader>p :GFiles<cr>
 
 Plug 'vitalk/vim-onoff'
 nnore <LocalLeader>c :Onoff cursorline<cr>
