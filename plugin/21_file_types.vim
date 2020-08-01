@@ -29,6 +29,9 @@ augroup ft_rust
         \ nnore <buffer> <s-e> :Dispatch cargo run<cr> |
         \ nnore <buffer> <s-d> :Dispatch cargo check<cr>
 
+  au BufLeave *
+        \ if &ft == 'rust' | call lsp#stop_server('rls') | endif
+
 augroup END
 
 " }}}
