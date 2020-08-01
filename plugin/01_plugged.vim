@@ -160,6 +160,13 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 let g:lsp_virtual_text_enabled = 1                " virtual text feature
 let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:lsp_settings_root_markers = [
+      \   'Cargo.toml',
+      \   '.git',
+      \   '.svn',
+      \   '.hg',
+      \   '.bzr'
+      \ ]
 
 Plug 'prabirshrestha/asyncomplete.vim'
 set completeopt+=preview                          " enable preview window
