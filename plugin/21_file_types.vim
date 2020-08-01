@@ -113,7 +113,7 @@ augroup ft_quickfix
         \ setl nocursorline |
         \ setl listchars= |
         \ setl tw=0 |
-        \ nnore <buffer> q :cclose<cr>
+        \ nnore <buffer> q :close<cr>
 
   " Use s to open file in split
   au FileType qf
